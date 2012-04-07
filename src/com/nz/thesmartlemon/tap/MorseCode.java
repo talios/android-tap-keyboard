@@ -1,4 +1,4 @@
-package com.example.android.softkeyboard;
+package com.nz.thesmartlemon.tap;
 
 /**
  * Lifted from http://tanksoftware.com/jtank/src/showsrc.php?src=src/net/jtank/protocol/MorseCode.java
@@ -119,7 +119,7 @@ public class MorseCode {
      */
 	public static String decode (String toEncode) {
 		String morse = toEncode;
-		
+
 		if (toEncode.equalsIgnoreCase(".-"))
 			morse = "a";
 		if (toEncode.equalsIgnoreCase("-..."))
@@ -198,7 +198,7 @@ public class MorseCode {
 			morse = ",";
 		if (toEncode.equalsIgnoreCase("..--.."))
 			morse = "?";
-		
+
 		return morse;
 	}
 

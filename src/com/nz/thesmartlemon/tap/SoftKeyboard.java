@@ -14,7 +14,7 @@
  * the License.
  */
 
-package com.example.android.softkeyboard;
+package com.nz.thesmartlemon.tap;
 
 import android.inputmethodservice.InputMethodService;
 import android.inputmethodservice.Keyboard;
@@ -27,7 +27,7 @@ import android.view.View;
 import android.view.inputmethod.CompletionInfo;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
-import android.view.inputmethod.InputMethodManager;
+import com.example.android.softkeyboard.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -554,6 +554,13 @@ public class SoftKeyboard extends InputMethodService
                 setSuggestions(null, false, false);
             }
         }
+    }
+
+    private void handleSpace(){
+    	String code = MorseCode.decode(mCode.toString());
+    	mComposing.append(code);
+    	getCurrentInputConnection().setComposingText(mComposing, 1);
+    	mCode.setLength(0);
     }
 
     public void setSuggestions(List<String> suggestions, boolean completions,
