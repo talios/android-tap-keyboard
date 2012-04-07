@@ -44,11 +44,7 @@
     <option name="FILTER_BY_CURRENT_PROJECT" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78c83412-c869-4755-ad47-d9a7b15a9f7b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/com/example/android/softkeyboard/R.java" afterPath="$PROJECT_DIR$/gen/com/example/android/softkeyboard/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/android/softkeyboard/SoftKeyboard.java" afterPath="$PROJECT_DIR$/src/com/example/android/softkeyboard/SoftKeyboard.java" />
-    </list>
+    <list default="true" id="78c83412-c869-4755-ad47-d9a7b15a9f7b" name="Default" comment="" />
     <ignored path="android-tap-keyboard.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -144,7 +140,7 @@
       <file leaf-file-name="SoftKeyboard.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/example/android/softkeyboard/SoftKeyboard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="498" column="12" selection-start="19456" selection-end="19456" vertical-scroll-proportion="0.3327616">
+            <state line="498" column="18" selection-start="19462" selection-end="19462" vertical-scroll-proportion="0.3327616">
               <folding />
             </state>
           </provider>
@@ -677,7 +673,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/android/softkeyboard/SoftKeyboard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="498" column="12" selection-start="19456" selection-end="19456" vertical-scroll-proportion="0.3327616">
+        <state line="498" column="18" selection-start="19462" selection-end="19462" vertical-scroll-proportion="0.3327616">
           <folding />
         </state>
       </provider>
