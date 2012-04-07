@@ -503,6 +503,7 @@ public class SoftKeyboard extends InputMethodService
             handleShift();
         } else if (primaryCode == 32) {
         	Log.i("key", "space");
+        	handleSpace();
         	handleCharacter(primaryCode, keyCodes);
         	handleSpace();
         }else{
