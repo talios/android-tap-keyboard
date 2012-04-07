@@ -16,6 +16,9 @@
 
 package com.nz.thesmartlemon.tap;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.inputmethodservice.InputMethodService;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;
@@ -27,12 +30,6 @@ import android.view.View;
 import android.view.inputmethod.CompletionInfo;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
-
-import com.example.android.softkeyboard.MorseCode;
-import com.example.android.softkeyboard.R;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Example of writing an input method for a soft keyboard.  This code is
@@ -548,6 +545,7 @@ public class SoftKeyboard extends InputMethodService
             if (mComposing.length() > 0) {
                 ArrayList<String> list = new ArrayList<String>();
                 list.add(mComposing.toString());
+                
                 setSuggestions(list, true, true);
             } else {
                 setSuggestions(null, false, false);
