@@ -23,6 +23,8 @@ import android.graphics.drawable.Drawable;
 import android.inputmethodservice.Keyboard;
 import android.view.inputmethod.EditorInfo;
 
+import com.example.android.softkeyboard.R;
+
 public class LatinKeyboard extends Keyboard {
 
     private Key mEnterKey;

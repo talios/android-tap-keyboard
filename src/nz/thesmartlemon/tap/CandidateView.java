@@ -16,6 +16,9 @@
 
 package nz.thesmartlemon.tap;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Canvas;
@@ -26,8 +29,7 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.example.android.softkeyboard.R;
 
 public class CandidateView extends View {
 

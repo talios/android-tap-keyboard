@@ -19,7 +19,9 @@ package nz.thesmartlemon.tap;
 import android.content.Intent;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
+
 import com.android.inputmethodcommon.InputMethodSettingsFragment;
+import com.example.android.softkeyboard.R;
 
 /**
  * Displays the IME preferences inside the input method setting.
