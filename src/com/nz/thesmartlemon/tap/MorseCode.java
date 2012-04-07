@@ -106,7 +106,8 @@ public class MorseCode {
 			morse = "--..--";
 		if (toEncode.equalsIgnoreCase("?"))
 			morse = "..--..";
-
+		if (toEncode == morse)
+			morse = "";
 		return morse;
 	}
 

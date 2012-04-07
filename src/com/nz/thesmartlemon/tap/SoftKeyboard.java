@@ -534,7 +534,12 @@ public class SoftKeyboard extends InputMethodService
     }
 
     private void handleSpace(){
-    	String code = MorseCode.decode(mCode.toString());
+    	String code;
+    	if(mCode.toString().equalsIgnoreCase(" ")){
+    		code = " ";
+    	}else{
+    		code = MorseCode.decode(mCode.toString());
+    	}
     	mComposing.append(code);
     	getCurrentInputConnection().setComposingText(mComposing, 1);
     	mCode.setLength(0);
