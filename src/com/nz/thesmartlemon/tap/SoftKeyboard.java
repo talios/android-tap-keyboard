@@ -462,10 +462,7 @@ public class SoftKeyboard extends InputMethodService
     // Implementation of KeyboardViewListener
 
     public void onKey(int primaryCode, int[] keyCodes) {
-    	if(primaryCode == -100 && keyCodes == null){
-    		Log.i("key", "space_long");
-    		handleCharacter(32, null);
-    	} else if (primaryCode == 45) {
+    	if (primaryCode == 45) {
     		Log.i("key", "45");
     		mCode.append((char) primaryCode);
         }else if (primaryCode == 46) {
@@ -474,7 +471,7 @@ public class SoftKeyboard extends InputMethodService
         } else if (primaryCode == -99) {
     		Log.i("key", "99");
     		handleSpace();
-        }else if (primaryCode == Keyboard.KEYCODE_DELETE) {
+        } else if (primaryCode == Keyboard.KEYCODE_DELETE) {
             handleBackspace();
         } else if (primaryCode == Keyboard.KEYCODE_SHIFT) {
             handleShift();

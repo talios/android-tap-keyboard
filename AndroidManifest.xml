@@ -1,5 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-        package="nz.thesmartlemon.tap">
+        package="nz.thesmartlemon.tap"
+        android:versionCode="1"
+    	android:versionName="0.1">
+
+    <uses-sdk android:minSdkVersion="3"/>
+    
     <application android:label="@string/ime_name">
         <service android:name="com.nz.thesmartlemon.tap.SoftKeyboard"
                 android:permission="android.permission.BIND_INPUT_METHOD">
