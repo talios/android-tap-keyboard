@@ -27,6 +27,8 @@ import android.view.View;
 import android.view.inputmethod.CompletionInfo;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
+
+import com.example.android.softkeyboard.MorseCode;
 import com.example.android.softkeyboard.R;
 
 import java.util.ArrayList;
@@ -504,7 +506,7 @@ public class SoftKeyboard extends InputMethodService
         } else if (primaryCode == 32) {
         	Log.i("key", "space");
         	handleSpace();
-        	handleCharacter(primaryCode, keyCodes);
+        	mCode.append((char) primaryCode);
         	handleSpace();
         }else{
         	handleCharacter(primaryCode, keyCodes);
@@ -557,7 +559,12 @@ public class SoftKeyboard extends InputMethodService
     }
 
     private void handleSpace(){
-    	String code = MorseCode.decode(mCode.toString());
+    	String code;
+    	if(mCode.toString().equalsIgnoreCase(" ")){
+    		code = " ";
+    	}else{
+    		code = MorseCode.decode(mCode.toString());
+    	}
     	mComposing.append(code);
     	getCurrentInputConnection().setComposingText(mComposing, 1);
     	mCode.setLength(0);
