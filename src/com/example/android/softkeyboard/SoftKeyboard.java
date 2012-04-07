@@ -14,13 +14,17 @@
  * limitations under the License.
  */
 
-package nz.thesmartlemon.tap;
+package com.example.android.softkeyboard;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import android.inputmethodservice.InputMethodService;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;
 import android.text.InputType;
 import android.text.method.MetaKeyKeyListener;
+import android.util.Log;
 import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
 import android.view.View;
@@ -28,8 +32,7 @@ import android.view.inputmethod.CompletionInfo;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.view.inputmethod.InputMethodManager;
-import java.util.ArrayList;
-import java.util.List;
+import android.view.inputmethod.InputMethodSubtype;
 
 /**
  * Example of writing an input method for a soft keyboard.  This code is
@@ -73,7 +76,11 @@ public class SoftKeyboard extends InputMethodService
     private LatinKeyboard mCurKeyboard;
     
     private String mWordSeparators;
+    private StringBuilder mCode = new StringBuilder();
     
+    private int space = 0;
+    
+    private int lastAmount = 0;
     /**
      * Main initialization of the input method component.  Be sure to call
      * to super class.
@@ -370,7 +377,17 @@ public class SoftKeyboard extends InputMethodService
             case KeyEvent.KEYCODE_ENTER:
                 // Let the underlying text editor always handle these.
                 return false;
-                
+            case 45:
+                // Let the underlying text editor always handle these.
+            	Log.i("key", "45");
+                return false;
+            case 46:
+                // Let the underlying text editor always handle these.
+            	Log.i("key", "46");
+                return false;
+            case KeyEvent.KEYCODE_SPACE:
+            	
+                return false; 
             default:
                 // For all other keys, if we want to do transformations on
                 // text being entered with a hard keyboard, we need to process
@@ -493,36 +510,25 @@ public class SoftKeyboard extends InputMethodService
     // Implementation of KeyboardViewListener
 
     public void onKey(int primaryCode, int[] keyCodes) {
-        if (isWordSeparator(primaryCode)) {
-            // Handle separator
-            if (mComposing.length() > 0) {
-                commitTyped(getCurrentInputConnection());
-            }
-            sendKey(primaryCode);
-            updateShiftKeyState(getCurrentInputEditorInfo());
+    	if(primaryCode == -100 && keyCodes == null){
+    		Log.i("key", "space_long");
+    		handleCharacter(32, null);
+    	}
+    	if (primaryCode == 45) {
+    		Log.i("key", "45");
+    		mCode.append((char) primaryCode);
+        }else if (primaryCode == 46) {
+    		Log.i("key", "46");
+        	mCode.append((char) primaryCode);
         } else if (primaryCode == Keyboard.KEYCODE_DELETE) {
             handleBackspace();
         } else if (primaryCode == Keyboard.KEYCODE_SHIFT) {
             handleShift();
-        } else if (primaryCode == Keyboard.KEYCODE_CANCEL) {
-            handleClose();
-            return;
-        } else if (primaryCode == LatinKeyboardView.KEYCODE_OPTIONS) {
-            // Show a menu or somethin'
-        } else if (primaryCode == Keyboard.KEYCODE_MODE_CHANGE
-                && mInputView != null) {
-            Keyboard current = mInputView.getKeyboard();
-            if (current == mSymbolsKeyboard || current == mSymbolsShiftedKeyboard) {
-                current = mQwertyKeyboard;
-            } else {
-                current = mSymbolsKeyboard;
-            }
-            mInputView.setKeyboard(current);
-            if (current == mSymbolsKeyboard) {
-                current.setShifted(false);
-            }
-        } else {
-            handleCharacter(primaryCode, keyCodes);
+        } else if (primaryCode == 32) {
+        	Log.i("key", "space");
+        	handleSpace();
+        }else {
+        	handleCharacter(primaryCode, keyCodes);
         }
     }
 
@@ -615,12 +621,26 @@ public class SoftKeyboard extends InputMethodService
             getCurrentInputConnection().setComposingText(mComposing, 1);
             updateShiftKeyState(getCurrentInputEditorInfo());
             updateCandidates();
-        } else {
-            getCurrentInputConnection().commitText(
-                    String.valueOf((char) primaryCode), 1);
+        } else if (primaryCode != KeyEvent.KEYCODE_SPACE){
+        	mCode.append((char) primaryCode);
+        } else if(primaryCode == 32 && keyCodes == null){
+        	handleSpace();
+        	mComposing.append((char) 32);
+        	getCurrentInputConnection().setComposingText(mComposing, 1);
+            updateShiftKeyState(getCurrentInputEditorInfo());
+            updateCandidates();
+        } else{
+        	handleSpace();
         }
     }
-
+    
+    private void handleSpace(){
+    	String code = MorseCode.decode(mCode.toString());
+    	mComposing.append(code);
+    	getCurrentInputConnection().setComposingText(mComposing, 1);
+    	mCode.setLength(0);
+    }
+    
     private void handleClose() {
         commitTyped(getCurrentInputConnection());
         requestHideSelf(0);
@@ -686,7 +706,11 @@ public class SoftKeyboard extends InputMethodService
     
     public void onPress(int primaryCode) {
     }
+
+	@Override
+	public void onRelease(int arg0) {
+		// TODO Auto-generated method stub
+		
+	}
     
-    public void onRelease(int primaryCode) {
-    }
 }
