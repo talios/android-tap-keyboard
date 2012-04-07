@@ -71,7 +71,6 @@ public class SoftKeyboard extends InputMethodService
 
     private LatinKeyboard mCurKeyboard;
 
-    private String mWordSeparators;
     private StringBuilder mCode = new StringBuilder();
 
     /**
@@ -80,7 +79,6 @@ public class SoftKeyboard extends InputMethodService
      */
     @Override public void onCreate() {
         super.onCreate();
-        mWordSeparators = getResources().getString(R.string.word_separators);
     }
 
     /**
@@ -308,10 +306,7 @@ public class SoftKeyboard extends InputMethodService
             return false;
         }
 
-        boolean dead = false;
-
         if ((c & KeyCharacterMap.COMBINING_ACCENT) != 0) {
-            dead = true;
             c = c & KeyCharacterMap.COMBINING_ACCENT_MASK;
         }
 
@@ -464,24 +459,6 @@ public class SoftKeyboard extends InputMethodService
                 new KeyEvent(KeyEvent.ACTION_UP, keyEventCode));
     }
 
-    /**
-     * Helper to send a character to the editor as raw key events.
-     */
-    private void sendKey(int keyCode) {
-        switch (keyCode) {
-            case '\n':
-                keyDownUp(KeyEvent.KEYCODE_ENTER);
-                break;
-            default:
-                if (keyCode >= '0' && keyCode <= '9') {
-                    keyDownUp(keyCode - '0' + KeyEvent.KEYCODE_0);
-                } else {
-                    getCurrentInputConnection().commitText(String.valueOf((char) keyCode), 1);
-                }
-                break;
-        }
-    }
-
     // Implementation of KeyboardViewListener
 
     public void onKey(int primaryCode, int[] keyCodes) {
@@ -627,15 +604,6 @@ public class SoftKeyboard extends InputMethodService
         } else {
             mLastShiftTime = now;
         }
-    }
-
-    private String getWordSeparators() {
-        return mWordSeparators;
-    }
-
-    public boolean isWordSeparator(int code) {
-        String separators = getWordSeparators();
-        return separators.contains(String.valueOf((char)code));
     }
 
     public void pickDefaultCandidate() {
