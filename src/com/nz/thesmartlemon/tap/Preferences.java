@@ -1,4 +1,4 @@
-package nz.thesmartlemon.tap;
+package com.nz.thesmartlemon.tap;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
