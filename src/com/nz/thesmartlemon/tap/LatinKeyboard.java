@@ -21,6 +21,7 @@ import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
 import android.inputmethodservice.Keyboard;
 import android.view.inputmethod.EditorInfo;
+import nz.thesmartlemon.tap.R;
 
 public class LatinKeyboard extends Keyboard {
 

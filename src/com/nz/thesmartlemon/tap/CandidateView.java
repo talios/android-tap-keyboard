@@ -28,6 +28,10 @@ import android.graphics.drawable.Drawable;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
+import nz.thesmartlemon.tap.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class CandidateView extends View {
 
