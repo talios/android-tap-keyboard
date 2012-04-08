@@ -32,3 +32,4 @@ Our Life cycle for it explained.
 - onFinishInput (we empty mComposing and then close the view
 - onDestroy (-)
 
+........................................................................
