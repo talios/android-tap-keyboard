@@ -16,10 +16,11 @@ import android.view.View;
 import android.view.inputmethod.CompletionInfo;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
+import nz.thesmartlemon.tap.R;
 
 public class AndroidTapActivity extends InputMethodService
 implements KeyboardView.OnKeyboardActionListener{
-	
+
 	static final boolean PROCESS_HARD_KEYS = true;
 
     private KeyboardView mInputView;
@@ -42,7 +43,7 @@ implements KeyboardView.OnKeyboardActionListener{
 
     private String mWordSeparators;
     private StringBuilder mCode = new StringBuilder();
-    
+
     /**
      * This is the point where you can do all of your UI initialization.  It
      * is called after creation and any configuration change.
@@ -58,8 +59,8 @@ implements KeyboardView.OnKeyboardActionListener{
         }
         mQwertyKeyboard = new LatinKeyboard(this, R.xml.qwerty);
     }
-    
-    
+
+
     /**
      * Called by the framework when your view for creating input needs to
      * be generated.  This will be called the first time your input method
@@ -73,7 +74,7 @@ implements KeyboardView.OnKeyboardActionListener{
         mInputView.setKeyboard(mQwertyKeyboard);
         return mInputView;
     }
-    
+
     /**
      * This is the main point where we do our initialization of the input method
      * to begin operating on an application.  At this point we have been
@@ -101,7 +102,7 @@ implements KeyboardView.OnKeyboardActionListener{
                 updateShiftKeyState(attribute);
             }
         }
-    
+
     /**
      * This is called when the user is done editing a field.  We can use
      * this to reset our state.
@@ -124,19 +125,19 @@ implements KeyboardView.OnKeyboardActionListener{
             mInputView.closing();
         }
     }
-    
+
     @Override public void onStartInputView(EditorInfo attribute, boolean restarting) {
         super.onStartInputView(attribute, restarting);
         // Apply the selected keyboard to the input view.
         mInputView.setKeyboard(mCurKeyboard);
         mInputView.closing();
     }
-    
+
 	@Override
 	public void onKey(int arg0, int[] arg1) {
-		
-        
-        
+
+
+
 		if (arg0 == 45) {
     		Log.i("key", "45");
     		mCode.append((char) arg0);
@@ -146,7 +147,7 @@ implements KeyboardView.OnKeyboardActionListener{
         } else if (arg0 == -99) {
     		Log.i("key", "99");
     		handleNext();
-    		
+
         } else if (arg0 == Keyboard.KEYCODE_DELETE) {
             handleBackspace();
         } else if (arg0 == Keyboard.KEYCODE_SHIFT) {
@@ -173,25 +174,25 @@ implements KeyboardView.OnKeyboardActionListener{
 	        vibrator.vibrate(pattern);
 		}
 	}
-	
+
 	@Override
 	public void onPress(int arg0) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void onRelease(int arg0) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void onText(CharSequence arg0) {
 		// TODO Auto-generated method stub
-		
+
 	}
-	
+
 	 /**
      * Use this to monitor key events being delivered to the application.
      * We get first crack at them, and can either resume them or let them
@@ -210,7 +211,7 @@ implements KeyboardView.OnKeyboardActionListener{
                     }
                 }
                 break;
-                
+
             case KeyEvent.KEYCODE_DEL:
                 // Special handling of the delete key: if we currently are
                 // composing text for the user, we want to modify that instead
@@ -220,7 +221,7 @@ implements KeyboardView.OnKeyboardActionListener{
                     return true;
                 }
                 break;
-                
+
             case KeyEvent.KEYCODE_ENTER:
                 // Let the underlying text editor always handle these.
                 return false;
@@ -233,8 +234,8 @@ implements KeyboardView.OnKeyboardActionListener{
             	Log.i("key", "46");
                 return false;
             case KeyEvent.KEYCODE_SPACE:
-            	
-                return false; 
+
+                return false;
             default:
                 // For all other keys, if we want to do transformations on
                 // text being entered with a hard keyboard, we need to process
@@ -265,10 +266,10 @@ implements KeyboardView.OnKeyboardActionListener{
                     }
                 }
         }
-        
+
         return super.onKeyDown(keyCode, event);
     }
-    
+
     private void keyDownUp(int keyEventCode) {
         getCurrentInputConnection().sendKeyEvent(
                 new KeyEvent(KeyEvent.ACTION_DOWN, keyEventCode));
@@ -291,34 +292,34 @@ implements KeyboardView.OnKeyboardActionListener{
                         keyCode, event);
             }
         }
-        
+
         return super.onKeyUp(keyCode, event);
     }
-    
+
 	@Override
 	public void swipeDown() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void swipeLeft() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void swipeRight() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void swipeUp() {
 		// TODO Auto-generated method stub
-		
+
 	}
-	
+
 	private void handleBackspace() {
         final int length = mComposing.length();
         if (length > 1) {
@@ -334,7 +335,7 @@ implements KeyboardView.OnKeyboardActionListener{
         }
         updateShiftKeyState(getCurrentInputEditorInfo());
     }
-    
+
 	 /* Deal with the editor reporting movement of its cursor.
      */
     @Override public void onUpdateSelection(int oldSelStart, int oldSelEnd,
@@ -355,7 +356,7 @@ implements KeyboardView.OnKeyboardActionListener{
             }
         }
     }
-    
+
     /**
      * Helper to update the shift state of our keyboard based on the initial
      * editor state.
@@ -363,7 +364,7 @@ implements KeyboardView.OnKeyboardActionListener{
     private void updateShiftKeyState(EditorInfo attr) {
         if (attr != null
                 && mInputView != null ) {
-        	
+
             int caps = 0;
             EditorInfo ei = getCurrentInputEditorInfo();
             if (ei != null && ei.inputType != EditorInfo.TYPE_NULL) {
@@ -372,7 +373,7 @@ implements KeyboardView.OnKeyboardActionListener{
             mInputView.setShifted(mCapsLock || caps != 0);
         }
     }
-    
+
     private void handleNext(){
     	String code;
     	if(mCode.toString().equalsIgnoreCase(" ")){
@@ -384,7 +385,7 @@ implements KeyboardView.OnKeyboardActionListener{
     	getCurrentInputConnection().setComposingText(mComposing, 1);
     	mCode.setLength(0);
     }
-    
+
     private void handleCharacter(int primaryCode, int[] keyCodes) {
         if (isInputViewShown()) {
             if (mInputView.isShifted()) {
@@ -401,7 +402,7 @@ implements KeyboardView.OnKeyboardActionListener{
                     String.valueOf((char) primaryCode), 1);
         }
     }
-    
+
  // originally from http://marblemice.blogspot.com/2010/04/generate-and-play-tone-in-android.html
     // and modified by Steve Pomeroy <steve@staticfree.info>
     private final int duration = 100; // seconds
@@ -433,7 +434,7 @@ implements KeyboardView.OnKeyboardActionListener{
 
         }
     }
-    
+
     void genTone2(){
         // fill out the array
         for (int i = 0; i < numSamples; ++i) {
@@ -452,7 +453,7 @@ implements KeyboardView.OnKeyboardActionListener{
 
         }
     }
-    
+
     void genTone3(){
         // fill out the array
         for (int i = 0; i < numSamples; ++i) {
