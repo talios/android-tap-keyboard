@@ -1,4 +1,4 @@
-package com.nz.thesmartlemon.tap;
+package nz.thesmartlemon.tap;
 
 import android.util.Log;
 
@@ -109,7 +109,7 @@ public class MorseCode {
 		if (toEncode.equalsIgnoreCase("?")){
 			morse = "..--..";} else {
 			morse = "";}
-		
+
 		return morse;
 	}
 

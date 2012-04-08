@@ -1,4 +1,4 @@
-package com.nz.thesmartlemon.tap;
+package nz.thesmartlemon.tap;
 
 import android.content.Context;
 import android.inputmethodservice.InputMethodService;
@@ -16,7 +16,6 @@ import android.view.View;
 import android.view.inputmethod.CompletionInfo;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
-import nz.thesmartlemon.tap.R;
 
 public class AndroidTapActivity extends InputMethodService
 implements KeyboardView.OnKeyboardActionListener{

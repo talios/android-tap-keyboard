@@ -10,28 +10,28 @@ import android.view.View.OnLongClickListener;
 import android.widget.TextView;
 
 public class Preferences extends Activity implements View.OnClickListener, OnLongClickListener {
-	
+
 	@Override
 	public void onCreate(Bundle b){
 		super.onCreate(b);
 		setContentView(R.layout.pref);
 		populate();
 	}
-	
+
 	@Override
 	public boolean onLongClick(View arg0) {
 		// TODO Auto-generated method stub
 		return false;
 	}
-	
+
 	@Override
 	public void onClick(View arg0) {
 		// TODO Auto-generated method stub
-		
+
 	}
-	
+
 	String[] symStrings = new String[]{
-		"A", 	
+		"A",
 		"B",
 		"C",
 		"D",
@@ -71,7 +71,7 @@ public class Preferences extends Activity implements View.OnClickListener, OnLon
 		",",
 		"?"
 	};
-	
+
 	int[] views = new int[]{
 			R.id.inc1,
 			R.id.inc2,
@@ -84,7 +84,7 @@ public class Preferences extends Activity implements View.OnClickListener, OnLon
 			R.id.inc9,
 			R.id.inc10
 	};
-	
+
 	int[] views2 = new int[]{
 			R.id.textView1,
 			R.id.textView2,
@@ -95,7 +95,7 @@ public class Preferences extends Activity implements View.OnClickListener, OnLon
 	private void populate(){
 		final SharedPreferences sp = PreferenceManager
 				.getDefaultSharedPreferences(this);
-			
+
 		int counter = 0;
 		int counter2 = 0;
 		for(int i = 0; i < symStrings.length; i++){
