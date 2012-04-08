@@ -1,0 +1,14 @@
+# -------------------------------------------------------
+# App: nz.thesmartlemon.tap, date: 20120406-20120407
+# -------------------------------------------------------
+
+date,carrier,daily_device_installs,active_device_installs,daily_user_installs,total_user_installs,active_user_installs,daily_device_uninstalls,daily_user_uninstalls,daily_device_upgrades
+20120407,Verizon Wireless,1,1,1,1,1,0,0,0
+20120407,UNKNOWN,2,1,2,2,1,1,1,0
+20120407,Telekom,1,1,1,1,1,0,0,0
+20120407,Tele2/Tele2 d.o.o.,1,0,1,1,0,0,0,0
+20120407,"TMN - Telecomunicações Móveis Nacionais, S.A.",1,1,1,1,1,0,0,0
+20120407,T-Mobile - US,1,1,1,1,1,0,0,0
+20120407,NZ Communications - UMTS Network,1,0,1,1,0,1,1,0
+20120407,MetroPCS,1,0,1,1,0,1,1,0
+20120407,Bouygues Telecom,1,1,1,1,1,0,0,0

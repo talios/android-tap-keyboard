@@ -1,0 +1,12 @@
+# -------------------------------------------------------
+# App: nz.thesmartlemon.tap, date: 20120406-20120407
+# -------------------------------------------------------
+
+date,country,daily_device_installs,active_device_installs,daily_user_installs,total_user_installs,active_user_installs,daily_device_uninstalls,daily_user_uninstalls,daily_device_upgrades
+20120407,US,3,2,3,3,2,1,1,0
+20120407,PT,1,1,1,1,1,0,0,0
+20120407,NZ,2,1,2,2,1,1,1,0
+20120407,HR,1,0,1,1,0,0,0,0
+20120407,FR,1,1,1,1,1,0,0,0
+20120407,DE,1,1,1,1,1,0,0,0
+20120407,CH,1,0,1,1,0,1,1,0
