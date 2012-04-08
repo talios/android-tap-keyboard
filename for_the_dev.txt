@@ -1,0 +1,34 @@
+Some changes for the developers
+
+- Added Preferences class
+- Added pref.xml 
+- Moved everything from SoftKeyboard to AndroidTapActivity
+
+Whats happening, just so you can understand better.
+
+(AndroidTapActivity)
+
+Life Cycle
+
+- onCreate
+- onCreateInputView
+- onCreateCanidatesView
+- onStartInputView
+
+- Text input (onKey, onKeyDown, onKeyUp)
+
+- onFinishInput
+- on Destroy
+
+Our Life cycle for it explained.
+
+- onCreate (-)
+- onCreateInputView (This is where we inflate the keyboard (qwerty) by creating a new instance of LatinKeyboard)
+- onCreateCanidatesView (We aren't using this yet)
+- onStartInputView (We empty out mComposing, check if the keyboard has restarted, and then change the keyboard if needed)
+
+-Text input (This is where we use onKey, in this we check which key it is out of 45, 46, -99. 32 or anything else and vibrate when we recieve it, for 45 we vibrate for 50, for 46 we vibrate for 40 (Short and long, for dit and dah) and for everything else we vibrate for 30)
+
+- onFinishInput (we empty mComposing and then close the view
+- onDestroy (-)
+
