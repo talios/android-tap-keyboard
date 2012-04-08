@@ -16,6 +16,9 @@
 
 package com.nz.thesmartlemon.tap;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.inputmethodservice.InputMethodService;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;
@@ -523,6 +526,7 @@ public class SoftKeyboard extends InputMethodService
             if (mComposing.length() > 0) {
                 ArrayList<String> list = new ArrayList<String>();
                 list.add(mComposing.toString());
+                
                 setSuggestions(list, true, true);
             } else {
                 setSuggestions(null, false, false);

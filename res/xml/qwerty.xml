@@ -22,15 +22,14 @@
     android:keyWidth="10%p"
     android:horizontalGap="0px"
     android:verticalGap="0px"
-    android:keyHeight="@dimen/key_height"
     >
 
-    <Row>
+    <Row android:keyHeight="@dimen/key_height">
         <Key android:codes="46" android:keyLabel="." android:keyWidth="50%p" android:keyEdgeFlags="left"/>
 		<Key android:codes="45" android:keyLabel="-" android:keyWidth="50%p" android:keyEdgeFlags="right"/>
     </Row>
     
-    <Row>
+    <Row android:keyHeight="@dimen/key_height2">
         <Key android:codes="-3" android:keyIcon="@drawable/sym_keyboard_done" 
                 android:keyWidth="20%p" android:keyEdgeFlags="left"/>
         <Key android:codes="-99" android:keyIcon="@drawable/arrow_non" 

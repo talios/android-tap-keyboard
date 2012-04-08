@@ -1,18 +1,28 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
         package="nz.thesmartlemon.tap"
-        android:versionCode="1"
-    	android:versionName="0.1">
+        android:versionCode="2"
+    	android:versionName="0.2">
 
     <uses-sdk android:minSdkVersion="3"/>
-
+    
+    <uses-permission android:name="android.permission.VIBRATE" />
+    
     <application android:label="@string/ime_name"
-            android:icon="@drawable/icon">
-        <service android:name="com.nz.thesmartlemon.tap.SoftKeyboard"
+        		 android:icon="@drawable/ic_launcher">
+        <service android:name="AndroidTapActivity"
                 android:permission="android.permission.BIND_INPUT_METHOD">
             <intent-filter>
                 <action android:name="android.view.InputMethod" />
             </intent-filter>
             <meta-data android:name="android.view.im" android:resource="@xml/method" />
         </service>
+        <activity android:name=".Preferences" 
+            		android:label="@string/ime_name"
+            		android:theme="@android:style/Theme.Light">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 </manifest>
