@@ -4,8 +4,9 @@
     	android:versionName="0.1">
 
     <uses-sdk android:minSdkVersion="3"/>
-    
-    <application android:label="@string/ime_name">
+
+    <application android:label="@string/ime_name"
+            android:icon="@drawable/icon">
         <service android:name="com.nz.thesmartlemon.tap.SoftKeyboard"
                 android:permission="android.permission.BIND_INPUT_METHOD">
             <intent-filter>
