@@ -2,6 +2,5 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
-	<classpathentry kind="lib" path="C:/Android/Android/android-sdk/platforms/android-8"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

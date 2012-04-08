@@ -2,13 +2,9 @@ ANDROID TAP
 
 Developed by Mark Derricutt, Emanuele Ziglioli & Fabian Cook
 
-........................................................................
-
 In development now:
 
 - Preferences, add & change key combinations
-
-........................................................................
 
 To come:
 
@@ -18,18 +14,12 @@ To come:
 - manually add key combinations
 - ICS look (optional)
 
-........................................................................
-
 v.0.2 (2)
 
 - added vibrate
 - fixed bug(when char wasn't there)
 - made two buttons larger
 
-........................................................................
-
 v.0.1 (1)
 
 - Initial Release
-
-........................................................................

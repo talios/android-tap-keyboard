@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Layout for Preferences class -->
-
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:orientation="vertical" >
-	
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:background="#EEE">
@@ -42,42 +40,169 @@
                 android:layout_height="1dp"
                 android:background="#CCC" android:paddingBottom="16dip"/>
 
-            <LinearLayout
+            <ScrollView
+                android:id="@+id/scrollView1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical" android:padding="16dip" android:id="@+id/syms">
+                android:layout_height="wrap_content" >
 
                 <LinearLayout
+                    android:id="@+id/syms"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1" >
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dip" >
 
-                    <RelativeLayout
+                    <View
+                        android:id="@+id/View02"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" >
-                    </RelativeLayout>
+                        android:layout_height="1dp"
+                        android:layout_weight="1"
+                        android:background="#CCC" />
 
-                    <RelativeLayout
+                    <include
+                        android:id="@+id/inc1"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" >
-                    </RelativeLayout>
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        layout="@layout/pref_row" />
 
-                    <RelativeLayout
+                    <View
+                        android:id="@+id/View03"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" >
-                    </RelativeLayout>
+                        android:layout_height="1dp"
+                        android:layout_weight="1"
+                        android:background="#CCC" />
 
-                    <RelativeLayout
+                    <include
+                        android:id="@+id/inc2"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" >
-                    </RelativeLayout>
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        layout="@layout/pref_row" />
+
+                    <View
+                        android:id="@+id/View04"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_weight="1"
+                        android:background="#CCC" />
+
+                    <include
+                        android:id="@+id/inc3"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        layout="@layout/pref_row" />
+
+                    <View
+                        android:id="@+id/View05"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_weight="1"
+                        android:background="#CCC" />
+
+                    <include
+                        android:id="@+id/inc4"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        layout="@layout/pref_row" />
+
+                    <View
+                        android:id="@+id/View06"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_weight="1"
+                        android:background="#CCC" />
+
+                    <include
+                        android:id="@+id/inc5"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        layout="@layout/pref_row" />
+
+                    <View
+                        android:id="@+id/View07"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_weight="1"
+                        android:background="#CCC" />
+
+                    <include
+                        android:id="@+id/inc6"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        layout="@layout/pref_row" />
+
+                    <View
+                        android:id="@+id/View08"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_weight="1"
+                        android:background="#CCC" />
+
+                    <include
+                        android:id="@+id/inc7"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        layout="@layout/pref_row" />
+
+                    <View
+                        android:id="@+id/View09"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_weight="1"
+                        android:background="#CCC" />
+
+                    <include
+                        android:id="@+id/inc8"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        layout="@layout/pref_row" />
+
+                    <View
+                        android:id="@+id/View10"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_weight="1"
+                        android:background="#CCC" />
+
+                    <include
+                        android:id="@+id/inc9"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        layout="@layout/pref_row" />
+
+                    <View
+                        android:id="@+id/View11"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_weight="1"
+                        android:background="#CCC" />
+
+                    <include
+                        android:id="@+id/inc10"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        layout="@layout/pref_row" />
+
+                    <View
+                        android:id="@+id/View12"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_weight="1"
+                        android:background="#CCC" />
 
                 </LinearLayout>
 
-            </LinearLayout>
+            </ScrollView>
 
         </LinearLayout>
 
     </LinearLayout>
-
-    
